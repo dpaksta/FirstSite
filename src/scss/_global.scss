@@ -1,0 +1,48 @@
+// -------------------------USING mixins with FLEX start
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flexH {
+  @include flex;
+  justify-content: center;
+}
+
+@mixin flexV {
+  @include flex;
+
+  align-items: center;
+}
+
+@mixin flexVH {
+  @include flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+// -------------------------USING mixins with FLEX end
+
+// Unwanted
+.margin-bottom-3rem {
+  margin-bottom: 3rem;
+}
+
+// FOR VIDEO  TAG
+video {
+  outline: none;
+  height: 50rem;
+  width: 50rem;
+}
+
+// for all section tag when vw less than tab
+section {
+  @include media("<=tablet") {
+    padding: 1rem;
+  }
+}
+
+#highPriorityForContentToStandOut {
+  z-index: 100;
+}
