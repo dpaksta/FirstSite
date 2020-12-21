@@ -1,0 +1,755 @@
+@import "./_breakpoint.scss";
+
+// SMOOTH SCROLLING start
+// also add id in href property of <a> tag inside toolbox.js and sidedrawer.js
+// html{
+//   overflow: hidden;
+//   }
+
+//   #pageContainerID{
+//     height: 84vh;
+//     overflow-y: scroll;
+//     scroll-behavior: smooth;
+
+//   }
+
+// SMOOTH SCROLLING end
+
+// reset css start
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  transition: all 1s ease-in-out;
+}
+// reset css end
+
+// Universal relational font size for all rem values
+:root {
+  font-size: 10px;
+
+  @include media(">=tablet", "<=desktop") {
+    font-size: 8.5px;
+  }
+  @include media(">=phone", "<=tablet") {
+    font-size: 7.5px;
+  }
+}
+
+// @import './_animations';
+@import "./_global";
+@import "./_responsive_mixin";
+@import "./_colors";
+
+// @import './_fonts';
+@import "./_typography";
+
+// -------------------------including RESPONSIVE MIXINS
+// .cls {
+//     width: 800px;
+//     height: 500px;
+//     background: $primary_green;
+
+//     @include responsive_mobile() {
+//         width: 300;
+//         height: 200px;
+//     }
+
+//     @include responsive_tab() {
+//         width: 300;
+//         height: 200px;
+//     }
+
+//     @include responsive(350px, 1200px) {
+//         width: 3110;
+//         height: 200px;
+//     }
+// }
+
+// -------------------------including RESPONSIVE MIXINS end
+
+body {
+  //     // between 0px to phone-px
+  //     @include  media('<=phone'){
+  //       background-color: $primary_green;
+  //   }
+
+  //   // greater than phone less than 425
+  //   @include  media('>=phone', '<=425px'){
+  //   background-color: $primary_bg;
+  //   }
+  //   // greater than tablet less than desktop
+  //   @include  media('>=tablet', '<=desktop'){
+  //   background-color: pink;
+  //   }
+}
+
+//   =====================================================================================================================
+// only logo is absolute .Navigation hammburger etc of toolbar dont have any position property
+$navBarHeight: 100%;
+$logoVerticalMargin: 42px;
+$ShiftNavDownAlongWithBdy: 0px;
+$NavBackgroundColor: transparent;
+$navLiColor: white;
+$hamburgerBgColor: white;
+$moveHamburgerVerticle: 0px;
+$logoHeight: 40px;
+
+.logoClsDiv {
+  position: absolute;
+  top: $logoVerticalMargin;
+  left: 115px;
+}
+
+.logoClsDiv img {
+  height: $logoHeight;
+}
+
+@media only screen and (min-width: 1px) and (max-width: 990px) {
+  .toolbar_navigation-items a {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 990px) {
+  .logoClsDiv {
+    position: absolute;
+    top: $logoVerticalMargin;
+    left: 115px;
+  }
+}
+
+.toggle-button {
+  margin-top: $moveHamburgerVerticle;
+}
+
+.toolbar__navigation {
+  background: $NavBackgroundColor;
+}
+/* nav right section  */
+.toolbar_navigation-items {
+  background-color: $NavBackgroundColor;
+}
+
+.ShiftNavDownAlongWithBdy {
+  margin-top: $ShiftNavDownAlongWithBdy;
+}
+
+.toolbar__navigation {
+  height: $navBarHeight;
+}
+
+.toggle-button__line {
+  background: $hamburgerBgColor;
+}
+
+.toolbar_navigation-items a {
+  color: $navLiColor;
+}
+
+// ========================================================CSS FOR HOME PAGE=================================
+
+button {
+  outline: none;
+  border: none;
+}
+
+// ==================================== Site starts here
+
+#heroSection {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(../pages/img/heroSection-bg.png);
+  background-size: cover;
+  background-position: center;
+
+  #leftPart {
+    @include media(">=desktop") {
+      margin-left: 15rem;
+    }
+    article {
+      margin-top: 18rem;
+      h3 {
+        font-size: 3.5rem;
+      }
+      h1 {
+        color: $primary_white;
+        font-size: 4.9rem;
+      }
+      p {
+        margin-top: 2.2rem;
+
+        line-height: 2rem;
+
+        color: $primary_white;
+        font-size: 1.6rem;
+      }
+      #buttonSection {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-evenly;
+        button {
+          color: white;
+          height: 4.1rem;
+          width: 13rem;
+          border-radius: 15rem;
+        }
+        #ourStory {
+          margin-left: -10rem;
+          background: #f42267;
+        }
+        #readmore {
+          margin-left: -12.2rem;
+
+          background: #773491;
+        }
+      }
+    }
+  }
+
+  #rightPart {
+    #heroMan {
+      margin-top: 2rem;
+      height: 65rem;
+      width: 68rem;
+      @include media("<=tablet") {
+        height: 45rem;
+        width: 48rem;
+      }
+    }
+  }
+}
+
+// WATCH SECTION
+
+#watchSection {
+  background-image: url(../pages/img/watchSection-bg.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  article {
+    @include media(">=desktop") {
+      margin-left: 5rem;
+    }
+    h3 {
+      margin-top: 5rem;
+      color: black;
+      font-size: 2.8rem;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+    #tabContainer {
+      margin-top: 3.2rem;
+      .tabBtn {
+        background: transparent;
+      }
+      #webDesign {
+      }
+      #mobileApp {
+      }
+      #branding {
+      }
+      #Product {
+      }
+      .tabBtn {
+        color: $primary_white;
+        font-size: 1.2rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        border-radius: 2.2rem;
+        height: 3.4rem;
+        width: 10rem;
+      }
+      .inactive {
+        color: black;
+      }
+      .active {
+        cursor: pointer;
+        box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.55);
+        &:hover {
+          box-shadow: none;
+          transition: all 300ms ease;
+          background: rgba(244, 34, 103, 0.5);
+        }
+
+        background: #f42267;
+      }
+
+      #buttonContainer {
+        p {
+          line-height: 1.5rem;
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+
+        #readmore {
+          background: #f42267;
+          border-radius: 2.3rem;
+          margin-top: 4rem;
+          height: 4.2rem;
+          width: 12.8rem;
+          color: $primary_white;
+          padding: 1.2rem;
+          @include media("<=tablet") {
+            width: 14.8rem;
+            padding: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  #watchImageContainer {
+    img {
+      height: 45rem;
+      width: 34rem;
+      @include media(">=desktop") {
+        margin-left: 10rem;
+        margin-top: 4rem;
+      }
+    }
+  }
+}
+
+#projectSection {
+  background: #4b2d7f;
+  #projectContainer {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #first,
+    #second,
+    #third {
+      width: 50rem;
+      background: #4b2d7f;
+      color: white;
+      @include flexV;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.3rem;
+      padding: 8rem;
+
+      p {
+        text-align: center;
+        color: #b29bdb;
+        margin-top: 2rem;
+        line-height: 2.2rem;
+      }
+      h1 {
+        font-size: 4rem;
+      }
+      h2 {
+        font-size: 2.7rem;
+      }
+      img {
+        margin-bottom: 2rem;
+        height: 8rem;
+      }
+    }
+    #second {
+      background-color: #40286a;
+      #employe {
+        font-size: 1.9rem;
+      }
+    }
+    #highly {
+      font-size: 2.2rem;
+    }
+  }
+}
+#ideaSection {
+  position: relative;
+  #filterEffect {
+    top: 0rem;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: rgba(103, 102, 194, 0.7);
+  }
+  background-image: url(../pages/img/ideaSection-bg.png);
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem;
+  h2 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 0.7rem;
+  }
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  p {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+#ideaSectionButton {
+  #ReadMore {
+    // font-size: 3rem;
+    padding: 1.6rem;
+    color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    background: #f42267;
+    margin-top: 1.4rem;
+  }
+}
+
+#videoSection {
+  padding: 3rem;
+  @include media(">=desktop") {
+    margin-left: 10rem;
+  }
+  #videoSectionContainer {
+    #leftSection {
+      article h3 {
+        font-size: 2.5rem;
+      }
+      article h1 {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+      }
+      article p {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+#videoSectionContainer {
+  @include flexVH;
+  flex-wrap: wrap;
+
+  #cardContainer {
+    @include flexVH;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    #cardLeft {
+      margin-right: 2rem;
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        margin: 1rem;
+      }
+      button {
+        padding: 1.6rem;
+        color: rgb(255, 255, 255);
+        border-radius: 2rem;
+        background: #f42267;
+        margin-top: 1.4rem;
+      }
+    }
+    #cardRight {
+      margin: 2rem;
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        margin: 1rem;
+      }
+      button {
+        padding: 1.6rem;
+        color: rgb(255, 255, 255);
+        border-radius: 2rem;
+        background: #f42267;
+        margin-top: 1.4rem;
+      }
+    }
+  }
+  #rightSection {
+  }
+}
+
+#videoSectionContainer {
+  #rightSection {
+    img {
+    }
+  }
+}
+// =========================== WORK SECTION =================
+#workSection {
+  padding-bottom: 4rem;
+  background-color: #f1f1f1;
+  @include flexVH;
+  flex-direction: column;
+  h1 {
+    margin-top: 4rem;
+    font-size: 3rem;
+  }
+  p {
+    margin-top: 2rem;
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+  }
+  #buttonContainer {
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    .btn {
+      border-radius: 2rem;
+      color: white;
+      margin-right: 1rem;
+      padding: 1rem 1.5rem;
+    }
+    .inactive {
+      color: black;
+    }
+    .active {
+      box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.55);
+
+      background: #f42267;
+    }
+  }
+  #productContainer {
+    width: 90vw;
+    list-style: none;
+    @include flexVH;
+    flex-wrap: wrap;
+
+    #products {
+      margin: 1rem;
+      img {
+        height: 30rem;
+      }
+    }
+  }
+  #workButtonContainer {
+    #workReadMore {
+      margin-top: 2rem;
+      height: 4.5rem;
+      width: 14rem;
+      border-radius: 0.6rem;
+      color: $primary_white;
+      background: #f42267;
+    }
+  }
+}
+
+#sponserSection {
+  background: #4b2d7f;
+  padding-top: 5rem;
+  @include flexVH;
+  ol {
+    padding-bottom: 2rem;
+    width: 60vw;
+    @include media("<=tablet") {
+      width: 40vw;
+    }
+
+    @include flexVH;
+    flex-wrap: wrap;
+    li {
+      margin: 1rem 3rem;
+      img {
+        transform: scale(0.7);
+        @include media("<=tablet") {
+          transform: scale(0.6);
+        }
+      }
+    }
+  }
+}
+
+#testimonialSection {
+  @include flexVH;
+  flex-wrap: wrap;
+  background-image: url(../pages/img/testimonialSection-bg.png);
+
+  #leftPart {
+    h3 {
+      color: $primary_white;
+      font-size: 3.4rem;
+    }
+    h1 {
+      color: $primary_white;
+
+      font-size: 3.6rem;
+    }
+
+    span {
+      font-size: 6.7rem;
+      color: $primary_pink;
+    }
+
+    // ========================
+    dl {
+      position: relative;
+      color: $primary_white;
+      #comma {
+        top: -3rem;
+        position: absolute;
+      }
+      p {
+        font-size: 1.6rem;
+        padding-left: 4rem;
+        margin-top: 5rem;
+      }
+    }
+    // ========================
+
+    #feedBackContainer {
+      #starContainer,
+      #johnDoe {
+        padding-left: 4rem;
+        color: white;
+        font-size: 1.8rem;
+      }
+      #starContainer {
+        margin-top: 3rem;
+        font-size: 3rem;
+        color: $primary_pink;
+      }
+      p {
+      }
+    }
+  }
+  #rightPart {
+    img {
+      width: 33rem;
+      height: 52rem;
+    }
+  }
+  #rightPart,
+  #leftPart {
+    margin: 0rem 4rem;
+  }
+}
+
+#helpSection {
+  display: flex;
+  padding: 3rem;
+
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../pages/img/helpSection.png);
+  h1 {
+    font-size: 3rem;
+    color: white;
+    margin: 0.2rem;
+  }
+  h2 {
+    color: white;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: white;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+#nameEmail {
+  flex-wrap: wrap;
+  justify-content: center;
+  input {
+    padding: 2rem;
+    height: 4rem;
+    width: 35rem;
+    border-style: none;
+    border-radius: 0.5rem;
+    margin: 1.2rem;
+    background: #f66f9b;
+    color: white;
+  }
+}
+::placeholder {
+  color: white;
+}
+input {
+  outline: none;
+}
+#helpSection {
+  #nameEmail {
+    button {
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      background: #4b2d7f;
+      color: $primary_white;
+    }
+  }
+}
+#socialMediaSection {
+  padding: 4rem 0rem;
+  background: #4b2d7f;
+  @include flexVH;
+  a {
+    margin: 2rem;
+    border-right: 2px solid #794ec4;
+    padding: 0rem 2rem;
+    button {
+      background: none;
+      color: white;
+      font-size: 2rem;
+    }
+  }
+}
+#companySection {
+  background-image: url(../pages/img/companySectionBg.png);
+  padding-bottom: 18rem;
+
+  @include flexVH;
+  #companyLeftSide {
+    width: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    h1 {
+      font-size: 2.5rem;
+      color: rgb(56, 78, 148);
+      margin-bottom: 1rem;
+    }
+    ol {
+      list-style: none;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: 3rem;
+    }
+  }
+  #companyRightSide {
+    #galleryContainer {
+      @include flexVH;
+      max-width: 80rem;
+
+      flex-wrap: wrap;
+      img {
+        // height: 20rem;
+        width: 30rem;
+        border-radius: 2rem;
+        margin: 1rem;
+      }
+    }
+  }
+}
+footer {
+  position: relative;
+  background: red;
+  @include flexVH;
+  ol {
+    font-size: 2rem;
+    color: black;
+    @include flexVH;
+    flex-wrap: wrap;
+    list-style: none;
+    position: absolute;
+    top: -3rem;
+
+    li {
+      margin: 0rem 2rem;
+    }
+  }
+}
